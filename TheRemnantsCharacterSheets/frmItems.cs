@@ -100,25 +100,26 @@ namespace TheRemnantsCharacterSheets
             t.SetBorder(TableBorderType.Left, tableBorder);
             t.SetBorder(TableBorderType.Right, tableBorder);
             t.SetBorder(TableBorderType.Top, tableBorder);
+            t.SetWidths(new float[] { 180f, 135, 135f });
 
             //Add image:
             Xceed.Document.NET.Image img = doc.AddImage(@"D:\wamp64\www\TheRemnantsCharacterSheets\TheRemnantsCharacterSheets\mitchjones.jpg");
-            Picture p = img.CreatePicture(200, 100);
+            Picture p = img.CreatePicture(230, 150);
             t.MergeCellsInColumn(0, 0, 10);
             t.Rows[0].Cells[0].Paragraphs.First().AppendPicture(p);
 
             //Add statistics:
-            t.Rows[0].Cells[1].Paragraphs.First().Append("Poziom: " + Character.Level);
-            t.Rows[1].Cells[1].Paragraphs.First().Append("Klasa: " + Character.Class);
-            t.Rows[2].Cells[1].Paragraphs.First().Append("Punkty Życia: " + Character.HP);
-            t.Rows[3].Cells[1].Paragraphs.First().Append("Zwinność: " + Character.Agility);
-            t.Rows[4].Cells[1].Paragraphs.First().Append("Szybkość: " + Character.Speed);
-            t.Rows[5].Cells[1].Paragraphs.First().Append("Wygląd: " + Character.Appearance);
-            t.Rows[6].Cells[1].Paragraphs.First().Append("Wprawa: " + Character.Dexterity);
-            t.Rows[7].Cells[1].Paragraphs.First().Append("Unik: " + Character.Dodge);
-            t.Rows[8].Cells[1].Paragraphs.First().Append("Siła: " + Character.Strength);
-            t.Rows[9].Cells[1].Paragraphs.First().Append("Atak Bazowy: " + Character.BaseAttack);
-            t.Rows[10].Cells[1].Paragraphs.First().Append("Rezystancja: " + Character.Resistance);
+            t.Rows[0].Cells[1].Paragraphs.First().Append("Poziom: " + Character.Level).SpacingAfter(7d);
+            t.Rows[1].Cells[1].Paragraphs.First().Append("Klasa: " + Character.Class).SpacingAfter(7d);
+            t.Rows[2].Cells[1].Paragraphs.First().Append("Punkty Życia: " + Character.HP).SpacingAfter(7d);
+            t.Rows[3].Cells[1].Paragraphs.First().Append("Zwinność: " + Character.Agility).SpacingAfter(7d);
+            t.Rows[4].Cells[1].Paragraphs.First().Append("Szybkość: " + Character.Speed).SpacingAfter(7d);
+            t.Rows[5].Cells[1].Paragraphs.First().Append("Wygląd: " + Character.Appearance).SpacingAfter(7d);
+            t.Rows[6].Cells[1].Paragraphs.First().Append("Wprawa: " + Character.Dexterity).SpacingAfter(7d);
+            t.Rows[7].Cells[1].Paragraphs.First().Append("Unik: " + Character.Dodge).SpacingAfter(7d);
+            t.Rows[8].Cells[1].Paragraphs.First().Append("Siła: " + Character.Strength).SpacingAfter(7d);
+            t.Rows[9].Cells[1].Paragraphs.First().Append("Atak Bazowy: " + Character.BaseAttack).SpacingAfter(7d);
+            t.Rows[10].Cells[1].Paragraphs.First().Append("Rezystancja: " + Character.Resistance).SpacingAfter(7d);
 
             //Add talents:
             Int32 Index = 0;

@@ -22,9 +22,9 @@ namespace TheRemnantsCharacterSheets
 
             //name and title
             Character.Name = txtName.Text.Length > 0 ? txtName.Text : "Mitch Jones";
-            Character.Title = txtTitle.Text.Length > 0 ? txtTitle.Text : "Boi";
-            Character.Group = txtGroup.Text.Length > 0 ? txtGroup.Text : " The Crew";
-            Character.Rank = txtRank.Text.Length > 0 ? txtRank.Text : ", at";
+            Character.Title = txtTitle.Text.Length > 0 ? txtTitle.Text : "The Legend";
+            Character.Group = txtGroup.Text.Length > 0 ? txtGroup.Text : "The Crew";
+            Character.Rank = txtRank.Text.Length > 0 ? txtRank.Text : "Boi";
 
             //stats
             Character.Level = txtLevel.Text.Length > 0 ? Convert.ToInt32(txtLevel.Text) : 1;

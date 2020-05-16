@@ -56,58 +56,50 @@ namespace TheRemnantsCharacterSheets
             //Path to save the sheet
             string fileName = @"D:\GeneratedDocs\sheet.docx";
 
-            //Title  
+            //Create Title  
             string title = Character.Name;
+
             //Formatting Title  
             Formatting titleFormat = new Formatting();
             titleFormat.FontFamily = new Xceed.Document.NET.Font("Calibri Light");
             titleFormat.Size = 28D;
-            titleFormat.Position = 40;
             titleFormat.FontColor = System.Drawing.Color.Black;
 
-            //Subtitle
-            string subtitle = Character.Title + ", " + Character.Rank + " '" + Character.Group + "'";
+            //Create Subtitle
+            string subtitle = Character.Title + ", " + Character.Rank + " '" + Character.Group + "'" + Environment.NewLine + Environment.NewLine + Environment.NewLine;
 
             //Formatting Subtitle
             Formatting textParagraphFormat = new Formatting();
             textParagraphFormat.FontFamily = new Xceed.Document.NET.Font("Calibri");
             textParagraphFormat.Size = 11D;
-            textParagraphFormat.FontColor = ColorTranslator.FromHtml("#5A5A5A");//System.Drawing.Color.Black; 
+            textParagraphFormat.FontColor = ColorTranslator.FromHtml("#5A5A5A"); 
 
             //Formatting Title  
-            //Formatting titleFormat = new Formatting();
-            //Specify font family  
-            //titleFormat.FontFamily = new Xceed.Document.NET.Font("Calibri Light");
-            //Specify font size  
-            //titleFormat.Size = 28D;
-            // titleFormat.Position = 40;
-            //titleFormat.FontColor = System.Drawing.Color.Black;
             //titleFormat.UnderlineColor = System.Drawing.Color.Gray;
             //titleFormat.Italic = true;
-
-            //Formatting Text Paragraph  
-            //Formatting textParagraphFormat = new Formatting();
-            //font family  
-            //textParagraphFormat.FontFamily = new Xceed.Document.NET.Font("Century Gothic");
-            //font size  
-            //textParagraphFormat.Size = 10D;
-            //Spaces between characters  
             //textParagraphFormat.Spacing = 2;
 
+            //Create word document
             var doc = DocX.Create(fileName);
 
             //Insert title  
             Paragraph paragraphTitle = doc.InsertParagraph(title, false, titleFormat);
             paragraphTitle.Alignment = Alignment.center;
-            //Insert subtitle
-            doc.InsertParagraph(subtitle, false, textParagraphFormat);
-            //Create a new paragraph  
-            //Paragraph par = doc.InsertParagraph("Word picture ^_^");
 
-            //Create Table with 2 rows and 4 columns.  
+            //Insert subtitle
+            Paragraph paragraphSubTitle = doc.InsertParagraph(subtitle, false, textParagraphFormat);
+            paragraphSubTitle.Alignment = Alignment.center;
+
+            //Create Table with 11 rows and 3 columns.  
             Table t = doc.AddTable(11, 3);
             t.Alignment = Alignment.center;
-            t.Design = TableDesign.ColorfulList;
+            Border tableBorder = new Border(Xceed.Document.NET.BorderStyle.Tcbs_none, 0, 0, Color.Black);
+            t.SetBorder(TableBorderType.Bottom, tableBorder);
+            t.SetBorder(TableBorderType.InsideH, tableBorder);
+            t.SetBorder(TableBorderType.InsideV, tableBorder);
+            t.SetBorder(TableBorderType.Left, tableBorder);
+            t.SetBorder(TableBorderType.Right, tableBorder);
+            t.SetBorder(TableBorderType.Top, tableBorder);
 
             //Add image:
             Xceed.Document.NET.Image img = doc.AddImage(@"D:\wamp64\www\TheRemnantsCharacterSheets\TheRemnantsCharacterSheets\mitchjones.jpg");

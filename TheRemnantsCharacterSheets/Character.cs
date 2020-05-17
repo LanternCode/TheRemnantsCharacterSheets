@@ -76,5 +76,6 @@ namespace TheRemnantsCharacterSheets
         public static int ResSeed { get; internal set; }
         public static int SpdSeed { get; internal set; }
         public static int HpSeed { get; internal set; }
+        public static int ItemCount { get; internal set; }
     }
 }

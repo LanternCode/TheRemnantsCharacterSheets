@@ -26,7 +26,7 @@ namespace TheRemnantsCharacterSheets
 
         public void UpdateEquipmentList()
         {
-            if (Character.Equipment.Count == 0) lblEquipmentAdded.Text = "No items were added yet!";
+            if (Character.Equipment.Count == 0) lblEquipmentAdded.Text = "Nie dodano jeszcze ekwipunku!";
             else
             {
                 lblEquipmentAdded.Text = ""; //reset the label before adding content to it

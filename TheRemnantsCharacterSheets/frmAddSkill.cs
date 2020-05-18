@@ -20,7 +20,7 @@ namespace TheRemnantsCharacterSheets
 
         public void UpdateSkillList()
         {
-            if (Character.Skills.Count == 0) lblSkillsAdded.Text = "No skills were added yet!";
+            if (Character.Skills.Count == 0) lblSkillsAdded.Text = "Nie dodano jeszcze żadnych umiejętności!";
             else
             {
                 lblSkillsAdded.Text = "";

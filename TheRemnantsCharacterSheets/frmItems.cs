@@ -103,15 +103,10 @@ namespace TheRemnantsCharacterSheets
             textParagraphFormat.Size = 11D;
             textParagraphFormat.FontColor = ColorTranslator.FromHtml("#5A5A5A"); 
 
-            //Formatting Title  
-            //titleFormat.UnderlineColor = System.Drawing.Color.Gray;
-            //titleFormat.Italic = true;
-            //textParagraphFormat.Spacing = 2;
-
             //Create word document
             var doc = DocX.Create(fileName);
 
-            //Insert title  
+            //Insert title
             Paragraph paragraphTitle = doc.InsertParagraph(title, false, titleFormat);
             paragraphTitle.Alignment = Alignment.center;
 
@@ -119,7 +114,7 @@ namespace TheRemnantsCharacterSheets
             Paragraph paragraphSubTitle = doc.InsertParagraph(subtitle, false, textParagraphFormat);
             paragraphSubTitle.Alignment = Alignment.center;
 
-            //Create Table with 11 rows and 3 columns.  
+            //Create Table with 11 rows and 3 columns.
             Table t = doc.AddTable(11, 3);
             t.Alignment = Alignment.center;
             Border tableBorder = new Border(Xceed.Document.NET.BorderStyle.Tcbs_none, 0, 0, Color.Black);
@@ -132,7 +127,7 @@ namespace TheRemnantsCharacterSheets
             t.SetWidths(new float[] { 180f, 135, 135f });
 
             //Add image:
-            Xceed.Document.NET.Image img = doc.AddImage(@"D:\wamp64\www\TheRemnantsCharacterSheets\TheRemnantsCharacterSheets\mitchjones.jpg");
+            Xceed.Document.NET.Image img = doc.AddImage(@"../../mkrr.jpg");
             Picture p = img.CreatePicture(230, 150);
             t.MergeCellsInColumn(0, 0, 10);
             t.Rows[0].Cells[0].Paragraphs.First().AppendPicture(p);
@@ -270,6 +265,8 @@ namespace TheRemnantsCharacterSheets
             //Insert the table
             doc.InsertTable(t);
 
+            doc.InsertParagraph(Environment.NewLine);
+
             //Create Table with 3 columns and enough rows to hold all skills, equipment and items 
             Int32 rowsRequired = Character.Equipment.Count > Character.Skills.Count ? (Character.Equipment.Count > Character.ItemCount ? Character.Equipment.Count : Character.ItemCount) : (Character.Skills.Count > Character.ItemCount ? Character.Skills.Count : Character.ItemCount);
             Table tableBottom = doc.AddTable(rowsRequired+1, 3); //first row is a header row
@@ -284,16 +281,16 @@ namespace TheRemnantsCharacterSheets
             tableBottom.SetWidths(new float[] { 150f, 150, 150f });
 
             //Create Headers For The Bottom Table
-            string skillsHeader = "Umiejętności";
-            string equipmentHeader = "Ekwipunek";
-            string itemsHeader = "Przedmioty";
+            string skillsHeader = "Umiejętności" + Environment.NewLine;
+            string equipmentHeader = "Ekwipunek" + Environment.NewLine;
+            string itemsHeader = "Przedmioty" + Environment.NewLine;
 
             //Formatting The Headers
             Formatting bottomTableHeaderFormat = new Formatting();
             bottomTableHeaderFormat.FontFamily = new Xceed.Document.NET.Font("Calibri");
             bottomTableHeaderFormat.Size = 14D;
-            bottomTableHeaderFormat.FontColor = ColorTranslator.FromHtml("#5A5A5A");
-            bottomTableHeaderFormat.UnderlineColor = ColorTranslator.FromHtml("#5A5A5A");
+            bottomTableHeaderFormat.FontColor = Color.Black;
+            bottomTableHeaderFormat.UnderlineColor = Color.Black;
 
             //Insert the headers
             tableBottom.Rows[0].Cells[0].InsertParagraph(skillsHeader, false, bottomTableHeaderFormat).Bold();
@@ -304,7 +301,7 @@ namespace TheRemnantsCharacterSheets
             Index = 1;
             foreach(Skill skill in Character.Skills)
             {
-                String line = skill.Name + (skill.Description.Length > 0 ? " - " : "") + skill.Description + " (" + skill.Priority + ")";
+                String line = "- " + skill.Name + (skill.Description.Length > 0 ? " - " : "") + skill.Description + " (" + skill.Priority + ")";
                 tableBottom.Rows[Index].Cells[0].Paragraphs.First().Append(line);
                 Index++;
             }
@@ -313,47 +310,45 @@ namespace TheRemnantsCharacterSheets
             Index = 1;
             foreach(Equipment item in Character.Equipment)
             {
-                String line = Equipment.listBuffs(item);
+                String line = "- " + Equipment.listBuffs(item);
                 tableBottom.Rows[Index].Cells[1].Paragraphs.First().Append(line);
                 Index++;
             }
 
             //List all items
             Index = 1;
-            
-                if(Character.Oasis > 0)
-                {
-                    tableBottom.Rows[Index].Cells[2].Paragraphs.First().Append("Oasis: " + Character.Oasis);
-                    Index++;
-                }
 
-                if(Character.Monster > 0){tableBottom.Rows[Index].Cells[2].Paragraphs.First().Append("Monster: " + Character.Monster);Index++;}
-                if(Character.Doritos > 0){tableBottom.Rows[Index].Cells[2].Paragraphs.First().Append("Doritos: " + Character.Doritos);Index++;}
-                if(Character.Coke > 0){tableBottom.Rows[Index].Cells[2].Paragraphs.First().Append("Coke: " + Character.Coke);Index++;}
-                if(Character.ColaOriginal > 0){tableBottom.Rows[Index].Cells[2].Paragraphs.First().Append("Cola Original: " + Character.ColaOriginal);Index++;}
-                if(Character.Crawford > 0){tableBottom.Rows[Index].Cells[2].Paragraphs.First().Append("Crawford & Tilley: " + Character.Crawford);Index++;}
-                if(Character.HotDog > 0){tableBottom.Rows[Index].Cells[2].Paragraphs.First().Append("HotDog: " + Character.HotDog);Index++;}
-                if(Character.Brownie > 0){tableBottom.Rows[Index].Cells[2].Paragraphs.First().Append("Brownie: " + Character.Brownie);Index++;}
-                if(Character.WhitePotion > 0){tableBottom.Rows[Index].Cells[2].Paragraphs.First().Append("White Potion: " + Character.WhitePotion);Index++;}
-                if(Character.YellowPotion > 0){tableBottom.Rows[Index].Cells[2].Paragraphs.First().Append("Yellow Potion: " + Character.YellowPotion);Index++;}
-                if(Character.Maltesers > 0){tableBottom.Rows[Index].Cells[2].Paragraphs.First().Append("Maltesers: " + Character.Maltesers);Index++;}
-                if(Character.RedPotion > 0){tableBottom.Rows[Index].Cells[2].Paragraphs.First().Append("Red Potion: " + Character.RedPotion);Index++;}
-                if(Character.GreenPotion > 0){tableBottom.Rows[Index].Cells[2].Paragraphs.First().Append("Green Potion: " + Character.GreenPotion);Index++;}
-                if(Character.MauvePotion > 0){tableBottom.Rows[Index].Cells[2].Paragraphs.First().Append("Mauve Potion: " + Character.MauvePotion);Index++;}
-                if(Character.DairyMilk > 0){tableBottom.Rows[Index].Cells[2].Paragraphs.First().Append("Dairy Milk: " + Character.DairyMilk);Index++;}
-                if(Character.Gfuel > 0){tableBottom.Rows[Index].Cells[2].Paragraphs.First().Append("GFuel: " + Character.Gfuel);Index++;}
-                if(Character.Coffee > 0){tableBottom.Rows[Index].Cells[2].Paragraphs.First().Append("Coffee: " + Character.Coffee);Index++;}
-                if(Character.Dobrowianka > 0){tableBottom.Rows[Index].Cells[2].Paragraphs.First().Append("Dobrowianka: " + Character.Dobrowianka);Index++;}
-                if(Character.MtnDew > 0){tableBottom.Rows[Index].Cells[2].Paragraphs.First().Append("Mtn Dew: " + Character.MtnDew);Index++;}
-                if(Character.DrPepper > 0){tableBottom.Rows[Index].Cells[2].Paragraphs.First().Append("Dr Pepper: " + Character.DrPepper);Index++;}
-                if(Character.HoolaHoops > 0){tableBottom.Rows[Index].Cells[2].Paragraphs.First().Append("Hoola Hoops: " + Character.HoolaHoops);Index++;}
-                if(Character.BarrCreamSoda > 0){tableBottom.Rows[Index].Cells[2].Paragraphs.First().Append("Barr's Cream Soda: " + Character.BarrCreamSoda);Index++;}
-                if(Character.StrSeed > 0){tableBottom.Rows[Index].Cells[2].Paragraphs.First().Append("Strength Seed: " + Character.StrSeed);Index++;}
-                if(Character.AgiSeed > 0){tableBottom.Rows[Index].Cells[2].Paragraphs.First().Append("Agility Seed: " + Character.AgiSeed);Index++;}
-                if(Character.AppSeed > 0){tableBottom.Rows[Index].Cells[2].Paragraphs.First().Append("Appearance Seed: " + Character.AppSeed);Index++;}
-                if(Character.ResSeed > 0){tableBottom.Rows[Index].Cells[2].Paragraphs.First().Append("Resilience Seed: " + Character.ResSeed);Index++;}
-                if(Character.SpdSeed > 0){tableBottom.Rows[Index].Cells[2].Paragraphs.First().Append("Speed Seed: " + Character.SpdSeed);Index++;}
-                if(Character.HpSeed > 0){tableBottom.Rows[Index].Cells[2].Paragraphs.First().Append("Health Seed: " + Character.HpSeed);Index++;}
+            if (Character.Oasis > 0) { tableBottom.Rows[Index].Cells[2].Paragraphs.First().Append("Oasis: " + Character.Oasis); Index++; }
+            if (Character.Monster > 0) { tableBottom.Rows[Index].Cells[2].Paragraphs.First().Append("Monster: " + Character.Monster); Index++; }
+            if (Character.Doritos > 0) { tableBottom.Rows[Index].Cells[2].Paragraphs.First().Append("Doritos: " + Character.Doritos); Index++; }
+            if (Character.Coke > 0) { tableBottom.Rows[Index].Cells[2].Paragraphs.First().Append("Coke: " + Character.Coke); Index++; }
+            if (Character.ColaOriginal > 0) { tableBottom.Rows[Index].Cells[2].Paragraphs.First().Append("Cola Original: " + Character.ColaOriginal); Index++; }
+            if (Character.Crawford > 0) { tableBottom.Rows[Index].Cells[2].Paragraphs.First().Append("Crawford & Tilley: " + Character.Crawford); Index++; }
+            if (Character.HotDog > 0) { tableBottom.Rows[Index].Cells[2].Paragraphs.First().Append("HotDog: " + Character.HotDog); Index++; }
+            if (Character.Brownie > 0) { tableBottom.Rows[Index].Cells[2].Paragraphs.First().Append("Brownie: " + Character.Brownie); Index++; }
+            if (Character.WhitePotion > 0) { tableBottom.Rows[Index].Cells[2].Paragraphs.First().Append("White Potion: " + Character.WhitePotion); Index++; }
+            if (Character.YellowPotion > 0) { tableBottom.Rows[Index].Cells[2].Paragraphs.First().Append("Yellow Potion: " + Character.YellowPotion); Index++; }
+            if (Character.Maltesers > 0) { tableBottom.Rows[Index].Cells[2].Paragraphs.First().Append("Maltesers: " + Character.Maltesers); Index++; }
+            if (Character.RedPotion > 0) { tableBottom.Rows[Index].Cells[2].Paragraphs.First().Append("Red Potion: " + Character.RedPotion); Index++; }
+            if (Character.GreenPotion > 0) { tableBottom.Rows[Index].Cells[2].Paragraphs.First().Append("Green Potion: " + Character.GreenPotion); Index++; }
+            if (Character.MauvePotion > 0) { tableBottom.Rows[Index].Cells[2].Paragraphs.First().Append("Mauve Potion: " + Character.MauvePotion); Index++; }
+            if (Character.DairyMilk > 0) { tableBottom.Rows[Index].Cells[2].Paragraphs.First().Append("Dairy Milk: " + Character.DairyMilk); Index++; }
+            if (Character.Gfuel > 0) { tableBottom.Rows[Index].Cells[2].Paragraphs.First().Append("GFuel: " + Character.Gfuel); Index++; }
+            if (Character.Coffee > 0) { tableBottom.Rows[Index].Cells[2].Paragraphs.First().Append("Coffee: " + Character.Coffee); Index++; }
+            if (Character.Dobrowianka > 0) { tableBottom.Rows[Index].Cells[2].Paragraphs.First().Append("Dobrowianka: " + Character.Dobrowianka); Index++; }
+            if (Character.MtnDew > 0) { tableBottom.Rows[Index].Cells[2].Paragraphs.First().Append("Mtn Dew: " + Character.MtnDew); Index++; }
+            if (Character.DrPepper > 0) { tableBottom.Rows[Index].Cells[2].Paragraphs.First().Append("Dr Pepper: " + Character.DrPepper); Index++; }
+            if (Character.HoolaHoops > 0) { tableBottom.Rows[Index].Cells[2].Paragraphs.First().Append("Hoola Hoops: " + Character.HoolaHoops); Index++; }
+            if (Character.BarrCreamSoda > 0) { tableBottom.Rows[Index].Cells[2].Paragraphs.First().Append("Barr's Cream Soda: " + Character.BarrCreamSoda); Index++; }
+            if (Character.StrSeed > 0) { tableBottom.Rows[Index].Cells[2].Paragraphs.First().Append("Strength Seed: " + Character.StrSeed); Index++; }
+            if (Character.AgiSeed > 0) { tableBottom.Rows[Index].Cells[2].Paragraphs.First().Append("Agility Seed: " + Character.AgiSeed); Index++; }
+            if (Character.AppSeed > 0) { tableBottom.Rows[Index].Cells[2].Paragraphs.First().Append("Appearance Seed: " + Character.AppSeed); Index++; }
+            if (Character.ResSeed > 0) { tableBottom.Rows[Index].Cells[2].Paragraphs.First().Append("Resilience Seed: " + Character.ResSeed); Index++; }
+            if (Character.SpdSeed > 0) { tableBottom.Rows[Index].Cells[2].Paragraphs.First().Append("Speed Seed: " + Character.SpdSeed); Index++; }
+            if (Character.HpSeed > 0) { tableBottom.Rows[Index].Cells[2].Paragraphs.First().Append("Health Seed: " + Character.HpSeed); Index++; }
+
+            //Insert the table
+            doc.InsertTable(tableBottom);
 
             doc.Save();
 

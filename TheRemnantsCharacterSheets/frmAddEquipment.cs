@@ -97,8 +97,13 @@ namespace TheRemnantsCharacterSheets
         private void button2_Click(object sender, EventArgs e)
         {
             frmItems newItems = new frmItems();
-            newItems.ShowDialog();
-            this.Close();
+            newItems.Show();
+            this.Hide();
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(0);
         }
     }
 }

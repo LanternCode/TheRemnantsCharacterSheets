@@ -294,6 +294,7 @@
             this.btnExit.TabIndex = 38;
             this.btnExit.Text = "Wyjdź";
             this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // button2
             // 
@@ -469,7 +470,6 @@
             this.Controls.Add(this.chkTactics);
             this.Name = "frmTalents";
             this.Text = "Teraz wybierz talenty swojej postaci!";
-            this.Load += new System.EventHandler(this.frmTalents_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

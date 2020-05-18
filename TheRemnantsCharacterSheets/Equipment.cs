@@ -8,7 +8,12 @@ namespace TheRemnantsCharacterSheets
 {
     public class Equipment
     {
+        //Name of the equipment piece
+
         public string Name { get; internal set; }
+
+        //Statistics bonus added by the equipment
+
         public int HP { get; internal set; }
         public int Agility { get; internal set; }
         public int Speed { get; internal set; }
@@ -18,6 +23,9 @@ namespace TheRemnantsCharacterSheets
         public int Strength { get; internal set; }
         public int BaseAttack { get; internal set; }
         public int Armor { get; internal set; }
+
+        //Talent bonus added by the equipment
+
         public int TacticAnalysis { get; internal set; }
         public int Tactics { get; internal set; }
         public int Knowledge { get; internal set; }

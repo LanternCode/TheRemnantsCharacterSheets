@@ -41,12 +41,13 @@
             this.btnClear = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.btnClose = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(37, 55);
+            this.label1.Location = new System.Drawing.Point(43, 55);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(126, 13);
             this.label1.TabIndex = 0;
@@ -116,7 +117,7 @@
             // 
             this.lblSkillsAdded.AutoSize = true;
             this.lblSkillsAdded.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSkillsAdded.Location = new System.Drawing.Point(68, 97);
+            this.lblSkillsAdded.Location = new System.Drawing.Point(74, 97);
             this.lblSkillsAdded.MaximumSize = new System.Drawing.Size(300, 500);
             this.lblSkillsAdded.Name = "lblSkillsAdded";
             this.lblSkillsAdded.Size = new System.Drawing.Size(0, 16);
@@ -125,11 +126,11 @@
             // btnFinish
             // 
             this.btnFinish.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFinish.Location = new System.Drawing.Point(310, 661);
+            this.btnFinish.Location = new System.Drawing.Point(263, 661);
             this.btnFinish.Name = "btnFinish";
-            this.btnFinish.Size = new System.Drawing.Size(177, 47);
+            this.btnFinish.Size = new System.Drawing.Size(289, 47);
             this.btnFinish.TabIndex = 9;
-            this.btnFinish.Text = "Zakończ Dodawanie";
+            this.btnFinish.Text = "Zakończ Dodawanie Umiejętności";
             this.btnFinish.UseVisualStyleBackColor = true;
             this.btnFinish.Click += new System.EventHandler(this.btnFinish_Click);
             // 
@@ -163,11 +164,22 @@
             this.label5.TabIndex = 12;
             this.label5.Text = "(opcjonalne)";
             // 
+            // btnClose
+            // 
+            this.btnClose.Location = new System.Drawing.Point(12, 671);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(119, 37);
+            this.btnClose.TabIndex = 13;
+            this.btnClose.Text = "Zamknij generator";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
             // frmAddSkill
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 720);
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.btnClear);
@@ -203,5 +215,6 @@
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btnClose;
     }
 }

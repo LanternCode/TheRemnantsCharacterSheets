@@ -87,17 +87,18 @@
             this.txtDefSeed = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label30 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(222, 22);
+            this.label1.Location = new System.Drawing.Point(208, 21);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(401, 13);
+            this.label1.Size = new System.Drawing.Size(449, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Po prostu wpisz posiadaną ilość, domyślna wynosi 0 i nie zostanie wpisana do kart" +
-    "y.";
+            this.label1.Text = "Wpisz posiadaną ilość danego przedmiotu, domyślna wynosi 0 i nie zostanie wpisana" +
+    " do karty.";
             // 
             // label2
             // 
@@ -577,12 +578,12 @@
             // 
             // button1
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(627, 355);
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(638, 427);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(134, 42);
+            this.button1.Size = new System.Drawing.Size(178, 63);
             this.button1.TabIndex = 57;
-            this.button1.Text = "Generuj!";
+            this.button1.Text = "Generuj kartę postaci!";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -595,11 +596,23 @@
             this.label30.TabIndex = 58;
             this.label30.Text = "Wszystkie pozostałe przedmioty będzie można dodać do już gotowej karty.";
             // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(12, 452);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(137, 38);
+            this.button2.TabIndex = 59;
+            this.button2.Text = "Zamknij generator";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // frmItems
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(828, 450);
+            this.ClientSize = new System.Drawing.Size(828, 502);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.label30);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.txtDefSeed);
@@ -727,5 +740,6 @@
         private System.Windows.Forms.TextBox txtDefSeed;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Button button2;
     }
 }

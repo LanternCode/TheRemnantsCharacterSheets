@@ -52,14 +52,19 @@ namespace TheRemnantsCharacterSheets
         private void btnFinish_Click(object sender, EventArgs e)
         {
             frmAddEquipment allEquipment = new frmAddEquipment();
-            allEquipment.ShowDialog();
-            this.Close();
+            allEquipment.Show();
+            this.Hide();
         }
 
         private void btnClear_Click(object sender, EventArgs e)
         {
             Character.Skills = new List<Skill>();
             UpdateSkillList();
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(0);
         }
     }
 }

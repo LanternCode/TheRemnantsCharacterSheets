@@ -33,13 +33,13 @@ namespace TheRemnantsCharacterSheets
             Character.RavenAgility = Convert.ToInt32(txtRavenAgility.Text);
 
             frmAddSkill stepThree = new frmAddSkill();
-            stepThree.ShowDialog();
-            this.Close();
+            stepThree.Show();
+            this.Hide();
         }
 
-        private void frmTalents_Load(object sender, EventArgs e)
+        private void btnExit_Click(object sender, EventArgs e)
         {
-
+            Environment.Exit(0);
         }
     }
 }

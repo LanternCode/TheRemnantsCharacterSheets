@@ -41,8 +41,13 @@ namespace TheRemnantsCharacterSheets
 
 
             frmTalents formTalents = new frmTalents();
-            formTalents.ShowDialog();
-            this.Close();
+            formTalents.Show();
+            this.Hide();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            Environment.Exit(0);
         }
     }
 }

@@ -16,7 +16,7 @@ namespace TheRemnantsCharacterSheets
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmStatistics());
+            Application.Run(new frmHome());
         }
     }
 }

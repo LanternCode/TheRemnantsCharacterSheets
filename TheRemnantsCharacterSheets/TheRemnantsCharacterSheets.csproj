@@ -66,6 +66,12 @@
     <Compile Include="frmAddSkill.Designer.cs">
       <DependentUpon>frmAddSkill.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmGenerate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGenerate.Designer.cs">
+      <DependentUpon>frmGenerate.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmHome.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +104,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmAddSkill.resx">
       <DependentUpon>frmAddSkill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGenerate.resx">
+      <DependentUpon>frmGenerate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmHome.resx">
       <DependentUpon>frmHome.cs</DependentUpon>

@@ -90,6 +90,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.txtPLN = new System.Windows.Forms.TextBox();
             this.label31 = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -626,11 +627,22 @@
             this.label31.TabIndex = 61;
             this.label31.Text = "Pieniądze (zł): ";
             // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label32.Location = new System.Drawing.Point(282, 474);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(264, 16);
+            this.label32.TabIndex = 62;
+            this.label32.Text = "Generator Kart Postaci © LanternCode 2020";
+            // 
             // frmItems
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(828, 502);
+            this.Controls.Add(this.label32);
             this.Controls.Add(this.label31);
             this.Controls.Add(this.txtPLN);
             this.Controls.Add(this.button2);
@@ -764,5 +776,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox txtPLN;
         private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Label label32;
     }
 }

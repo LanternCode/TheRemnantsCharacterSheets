@@ -79,6 +79,8 @@ namespace TheRemnantsCharacterSheets
             Character.ItemCount += Character.SpdSeed > 0 ? 1 : 0;
             Character.HpSeed = Convert.ToInt32(txtHPSeed.Text);
             Character.ItemCount += Character.HpSeed > 0 ? 1 : 0;
+            Character.Cash = Convert.ToInt32(txtPLN.Text);
+            Character.ItemCount += Character.Cash > 0 ? 1 : 0;
 
             frmGenerate finalStep = new frmGenerate();
             finalStep.Show();

@@ -266,6 +266,7 @@ namespace TheRemnantsCharacterSheets
 
             //List all items
 
+            if (Character.Cash > 0) { tableBottom.Rows[1].Cells[2].Paragraphs.First().Append("- " + Character.Cash + " zł" + Environment.NewLine); }
             if (Character.Oasis > 0) { tableBottom.Rows[1].Cells[2].Paragraphs.First().Append("- Oasis: " + Character.Oasis + Environment.NewLine); }
             if (Character.Monster > 0) { tableBottom.Rows[1].Cells[2].Paragraphs.First().Append("- Monster: " + Character.Monster + Environment.NewLine); }
             if (Character.Doritos > 0) { tableBottom.Rows[1].Cells[2].Paragraphs.First().Append("- Doritos: " + Character.Doritos + Environment.NewLine); }

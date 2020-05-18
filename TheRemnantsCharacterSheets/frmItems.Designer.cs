@@ -88,6 +88,8 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label30 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
+            this.txtPLN = new System.Windows.Forms.TextBox();
+            this.label31 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -607,11 +609,30 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // txtPLN
+            // 
+            this.txtPLN.Location = new System.Drawing.Point(694, 348);
+            this.txtPLN.Name = "txtPLN";
+            this.txtPLN.Size = new System.Drawing.Size(100, 20);
+            this.txtPLN.TabIndex = 60;
+            this.txtPLN.Text = "0";
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(573, 351);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(77, 13);
+            this.label31.TabIndex = 61;
+            this.label31.Text = "Pieniądze (zł): ";
+            // 
             // frmItems
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(828, 502);
+            this.Controls.Add(this.label31);
+            this.Controls.Add(this.txtPLN);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label30);
             this.Controls.Add(this.button1);
@@ -741,5 +762,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox txtPLN;
+        private System.Windows.Forms.Label label31;
     }
 }

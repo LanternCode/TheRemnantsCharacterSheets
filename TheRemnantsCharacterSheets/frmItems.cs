@@ -283,8 +283,25 @@ namespace TheRemnantsCharacterSheets
             tableBottom.SetBorder(TableBorderType.Top, tableBottomBorder);
             tableBottom.SetWidths(new float[] { 150f, 150, 150f });
 
+            //Create Headers For The Bottom Table
+            string skillsHeader = "Umiejętności";
+            string equipmentHeader = "Ekwipunek";
+            string itemsHeader = "Przedmioty";
+
+            //Formatting The Headers
+            Formatting bottomTableHeaderFormat = new Formatting();
+            bottomTableHeaderFormat.FontFamily = new Xceed.Document.NET.Font("Calibri");
+            bottomTableHeaderFormat.Size = 14D;
+            bottomTableHeaderFormat.FontColor = ColorTranslator.FromHtml("#5A5A5A");
+            bottomTableHeaderFormat.UnderlineColor = ColorTranslator.FromHtml("#5A5A5A");
+
+            //Insert the headers
+            tableBottom.Rows[0].Cells[0].InsertParagraph(skillsHeader, false, bottomTableHeaderFormat);
+            tableBottom.Rows[0].Cells[1].InsertParagraph(equipmentHeader, false, bottomTableHeaderFormat);
+            tableBottom.Rows[0].Cells[2].InsertParagraph(itemsHeader, false, bottomTableHeaderFormat);
+
             //List all skills
-            Index = 0;
+            Index = 1;
             foreach(Skill skill in Character.Skills)
             {
                 String line = skill.Name + (skill.Description.Length > 0 ? " - " : "") + skill.Description + " (" + skill.Priority + ")";
@@ -293,7 +310,7 @@ namespace TheRemnantsCharacterSheets
             }
 
             //List all equipment
-            Index = 0;
+            Index = 1;
             foreach(Equipment item in Character.Equipment)
             {
                 String line = item.Name + "(" + ")";
@@ -302,7 +319,7 @@ namespace TheRemnantsCharacterSheets
             }
 
             //List all items
-            Index = 0;
+            Index = 1;
             
                 if(Character.Oasis > 0)
                 {

@@ -272,7 +272,7 @@ namespace TheRemnantsCharacterSheets
 
             //Create Table with 3 columns and enough rows to hold all skills, equipment and items 
             Int32 rowsRequired = Character.Equipment.Count > Character.Skills.Count ? (Character.Equipment.Count > Character.ItemCount ? Character.Equipment.Count : Character.ItemCount) : (Character.Skills.Count > Character.ItemCount ? Character.Skills.Count : Character.ItemCount);
-            Table tableBottom = doc.AddTable(rowsRequired, 3);
+            Table tableBottom = doc.AddTable(rowsRequired+1, 3); //first row is a header row
             tableBottom.Alignment = Alignment.center;
             Border tableBottomBorder = new Border(Xceed.Document.NET.BorderStyle.Tcbs_none, 0, 0, Color.Black);
             tableBottom.SetBorder(TableBorderType.Bottom, tableBottomBorder);
@@ -296,9 +296,9 @@ namespace TheRemnantsCharacterSheets
             bottomTableHeaderFormat.UnderlineColor = ColorTranslator.FromHtml("#5A5A5A");
 
             //Insert the headers
-            tableBottom.Rows[0].Cells[0].InsertParagraph(skillsHeader, false, bottomTableHeaderFormat);
-            tableBottom.Rows[0].Cells[1].InsertParagraph(equipmentHeader, false, bottomTableHeaderFormat);
-            tableBottom.Rows[0].Cells[2].InsertParagraph(itemsHeader, false, bottomTableHeaderFormat);
+            tableBottom.Rows[0].Cells[0].InsertParagraph(skillsHeader, false, bottomTableHeaderFormat).Bold();
+            tableBottom.Rows[0].Cells[1].InsertParagraph(equipmentHeader, false, bottomTableHeaderFormat).Bold();
+            tableBottom.Rows[0].Cells[2].InsertParagraph(itemsHeader, false, bottomTableHeaderFormat).Bold();
 
             //List all skills
             Index = 1;
@@ -313,7 +313,7 @@ namespace TheRemnantsCharacterSheets
             Index = 1;
             foreach(Equipment item in Character.Equipment)
             {
-                String line = item.Name + "(" + ")";
+                String line = Equipment.listBuffs(item);
                 tableBottom.Rows[Index].Cells[1].Paragraphs.First().Append(line);
                 Index++;
             }
@@ -355,11 +355,6 @@ namespace TheRemnantsCharacterSheets
                 if(Character.SpdSeed > 0){tableBottom.Rows[Index].Cells[2].Paragraphs.First().Append("Speed Seed: " + Character.SpdSeed);Index++;}
                 if(Character.HpSeed > 0){tableBottom.Rows[Index].Cells[2].Paragraphs.First().Append("Health Seed: " + Character.HpSeed);Index++;}
 
-
-            //Hyperlink  
-            //Hyperlink url = doc.AddHyperlink("Google Web Site", new Uri("http://www.google.com"));
-            //Paragraph p1 = doc.InsertParagraph();
-            //p1.AppendLine("Please check ").Bold().AppendHyperlink(url);
             doc.Save();
 
             Process.Start("WINWORD.EXE", fileName);

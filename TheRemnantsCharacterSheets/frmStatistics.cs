@@ -21,14 +21,14 @@ namespace TheRemnantsCharacterSheets
         {
 
             //name and title
-            Character.Name = txtName.Text.Length > 0 ? txtName.Text : "Mitch Jones";
-            Character.Title = txtTitle.Text.Length > 0 ? txtTitle.Text : "The Legend";
-            Character.Group = txtGroup.Text.Length > 0 ? txtGroup.Text : "The Crew";
-            Character.Rank = txtRank.Text.Length > 0 ? txtRank.Text : "Boi";
+            Character.Name = txtName.Text.Length > 0 ? txtName.Text : "Mateusz Krzesiński";//"Mitch Jones";
+            Character.Title = txtTitle.Text.Length > 0 ? txtTitle.Text : "Legenda Streamingu";
+            Character.Group = txtGroup.Text.Length > 0 ? txtGroup.Text : "Twitch.TV";
+            Character.Rank = txtRank.Text.Length > 0 ? txtRank.Text : "Szefu";
 
             //stats
             Character.Level = txtLevel.Text.Length > 0 ? Convert.ToInt32(txtLevel.Text) : 1;
-            Character.Class = txtClass.Text.Length > 0 ? txtClass.Text : "Twitch Streamer";
+            Character.Class = txtClass.Text.Length > 0 ? txtClass.Text : "Livestreamer";
             Character.HP = txtHP.Text.Length > 0 ? Convert.ToInt32(txtHP.Text) : 100;
             Character.Agility = txtAgi.Text.Length > 0 ? Convert.ToInt32(txtAgi.Text): 90;
             Character.Speed = txtSpd.Text.Length > 0 ? Convert.ToInt32(txtSpd.Text) : 85;

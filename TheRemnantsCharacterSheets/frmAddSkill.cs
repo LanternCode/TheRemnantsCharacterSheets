@@ -35,16 +35,19 @@ namespace TheRemnantsCharacterSheets
         private void btnAdd_Click(object sender, EventArgs e)
         {
             Skill aSkill = new Skill();
+            int value;
 
             aSkill.Name = txtName.Text;
             aSkill.Description = txtDescription.Text;
-            aSkill.Priority = Convert.ToInt32(txtPriority.Text);
+            aSkill.Priority = int.TryParse(txtPriority.Text, out value) ? Convert.ToInt32(txtPriority.Text) : 5;
+            aSkill.Passive = chkPassive.Checked;
 
             Character.Skills.Add(aSkill);
 
             txtName.Clear();
             txtDescription.Clear();
             txtPriority.Clear();
+            chkPassive.Checked = false;
 
             UpdateSkillList();
         }

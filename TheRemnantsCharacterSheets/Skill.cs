@@ -11,5 +11,6 @@ namespace TheRemnantsCharacterSheets
         public string Name { get; internal set; }
         public string Description { get; internal set; }
         public int Priority { get; internal set; }
+        public bool Passive { get; internal set; }
     }
 }

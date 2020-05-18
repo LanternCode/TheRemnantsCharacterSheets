@@ -39,7 +39,7 @@
             this.lblSkillsAdded = new System.Windows.Forms.Label();
             this.btnFinish = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.chkPassive = new System.Windows.Forms.CheckBox();
             this.label5 = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
@@ -146,15 +146,15 @@
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
-            // checkBox1
+            // chkPassive
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(374, 159);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(129, 17);
-            this.checkBox1.TabIndex = 11;
-            this.checkBox1.Text = "Umiejętność pasywna";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.chkPassive.AutoSize = true;
+            this.chkPassive.Location = new System.Drawing.Point(374, 159);
+            this.chkPassive.Name = "chkPassive";
+            this.chkPassive.Size = new System.Drawing.Size(129, 17);
+            this.chkPassive.TabIndex = 11;
+            this.chkPassive.Text = "Umiejętność pasywna";
+            this.chkPassive.UseVisualStyleBackColor = true;
             // 
             // label5
             // 
@@ -193,7 +193,7 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.chkPassive);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnFinish);
             this.Controls.Add(this.lblSkillsAdded);
@@ -225,7 +225,7 @@
         private System.Windows.Forms.Label lblSkillsAdded;
         private System.Windows.Forms.Button btnFinish;
         private System.Windows.Forms.Button btnClear;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox chkPassive;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Label label6;

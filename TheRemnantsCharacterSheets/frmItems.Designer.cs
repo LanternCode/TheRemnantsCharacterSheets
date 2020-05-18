@@ -48,7 +48,7 @@
             this.txtMtnDew = new System.Windows.Forms.TextBox();
             this.txtDrPepper = new System.Windows.Forms.TextBox();
             this.txtCrawford = new System.Windows.Forms.TextBox();
-            this.txtHopaHoops = new System.Windows.Forms.TextBox();
+            this.txtHoolaHoops = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
@@ -265,13 +265,13 @@
             this.txtCrawford.TabIndex = 19;
             this.txtCrawford.Text = "0";
             // 
-            // txtHopaHoops
+            // txtHoolaHoops
             // 
-            this.txtHopaHoops.Location = new System.Drawing.Point(149, 377);
-            this.txtHopaHoops.Name = "txtHopaHoops";
-            this.txtHopaHoops.Size = new System.Drawing.Size(100, 20);
-            this.txtHopaHoops.TabIndex = 20;
-            this.txtHopaHoops.Text = "0";
+            this.txtHoolaHoops.Location = new System.Drawing.Point(149, 377);
+            this.txtHoolaHoops.Name = "txtHoolaHoops";
+            this.txtHoolaHoops.Size = new System.Drawing.Size(100, 20);
+            this.txtHoolaHoops.TabIndex = 20;
+            this.txtHoolaHoops.Text = "0";
             // 
             // label12
             // 
@@ -684,7 +684,7 @@
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.txtHopaHoops);
+            this.Controls.Add(this.txtHoolaHoops);
             this.Controls.Add(this.txtCrawford);
             this.Controls.Add(this.txtDrPepper);
             this.Controls.Add(this.txtMtnDew);
@@ -734,7 +734,7 @@
         private System.Windows.Forms.TextBox txtMtnDew;
         private System.Windows.Forms.TextBox txtDrPepper;
         private System.Windows.Forms.TextBox txtCrawford;
-        private System.Windows.Forms.TextBox txtHopaHoops;
+        private System.Windows.Forms.TextBox txtHoolaHoops;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;

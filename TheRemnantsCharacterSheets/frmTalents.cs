@@ -19,18 +19,19 @@ namespace TheRemnantsCharacterSheets
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Character.TacticAnalysis = Convert.ToInt32(txtTacticAnalysis.Text);
-            Character.Tactics = Convert.ToInt32(txtTactics.Text);
-            Character.Knowledge = Convert.ToInt32(txtKnowledge.Text);
-            Character.MeleeRange = Convert.ToInt32(txtMeleeRange.Text);
-            Character.ShortRange = Convert.ToInt32(txtShortRange.Text);
-            Character.Sorcery = Convert.ToInt32(txtSorcery.Text);
-            Character.Faith = Convert.ToInt32(txtFaith.Text);
-            Character.Symbolics = Convert.ToInt32(txtSymbolics.Text);
-            Character.PassiveIncome = Convert.ToInt32(txtPassiveIncome.Text);
-            Character.WeaponMastery = Convert.ToInt32(txtWeaponMastery.Text);
-            Character.SpellMastery = Convert.ToInt32(txtSpellMastery.Text);
-            Character.RavenAgility = Convert.ToInt32(txtRavenAgility.Text);
+            int value;
+            Character.TacticAnalysis = int.TryParse(txtTacticAnalysis.Text, out value) ? Convert.ToInt32(txtTacticAnalysis.Text) : 0;
+            Character.Tactics = int.TryParse(txtTacticAnalysis.Text, out value) ? Convert.ToInt32(txtTactics.Text) : 0;
+            Character.Knowledge = int.TryParse(txtTacticAnalysis.Text, out value) ? Convert.ToInt32(txtKnowledge.Text) : 0;
+            Character.MeleeRange = int.TryParse(txtTacticAnalysis.Text, out value) ? Convert.ToInt32(txtMeleeRange.Text) : 0;
+            Character.ShortRange = int.TryParse(txtTacticAnalysis.Text, out value) ? Convert.ToInt32(txtShortRange.Text) : 0;
+            Character.Sorcery = int.TryParse(txtTacticAnalysis.Text, out value) ? Convert.ToInt32(txtSorcery.Text) : 0;
+            Character.Faith = int.TryParse(txtTacticAnalysis.Text, out value) ? Convert.ToInt32(txtFaith.Text) : 0;
+            Character.Symbolics = int.TryParse(txtTacticAnalysis.Text, out value) ? Convert.ToInt32(txtSymbolics.Text) : 0;
+            Character.PassiveIncome = int.TryParse(txtTacticAnalysis.Text, out value) ? Convert.ToInt32(txtPassiveIncome.Text) : 0;
+            Character.WeaponMastery = int.TryParse(txtTacticAnalysis.Text, out value) ? Convert.ToInt32(txtWeaponMastery.Text) : 0;
+            Character.SpellMastery = int.TryParse(txtTacticAnalysis.Text, out value) ? Convert.ToInt32(txtSpellMastery.Text) : 0;
+            Character.RavenAgility = int.TryParse(txtTacticAnalysis.Text, out value) ? Convert.ToInt32(txtRavenAgility.Text) : 0;
 
             frmAddSkill stepThree = new frmAddSkill();
             stepThree.Show();

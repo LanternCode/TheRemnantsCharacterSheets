@@ -37,7 +37,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtRank = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.imgCharacter = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtLevel = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -64,8 +64,8 @@
             this.btnContinue = new System.Windows.Forms.Button();
             this.label18 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.label19 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.btnPicture = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.imgCharacter)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -135,19 +135,19 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(139, 143);
+            this.label5.Location = new System.Drawing.Point(43, 168);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(83, 13);
             this.label5.TabIndex = 8;
             this.label5.Text = "Zdjęcie Postaci:";
             // 
-            // pictureBox1
+            // imgCharacter
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(122, 172);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(162, 293);
-            this.pictureBox1.TabIndex = 9;
-            this.pictureBox1.TabStop = false;
+            this.imgCharacter.Location = new System.Drawing.Point(132, 129);
+            this.imgCharacter.Name = "imgCharacter";
+            this.imgCharacter.Size = new System.Drawing.Size(162, 293);
+            this.imgCharacter.TabIndex = 9;
+            this.imgCharacter.TabStop = false;
             // 
             // label6
             // 
@@ -358,7 +358,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(12, 423);
+            this.button1.Location = new System.Drawing.Point(12, 448);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(89, 43);
             this.button1.TabIndex = 35;
@@ -366,22 +366,22 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
-            // label19
+            // btnPicture
             // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(20, 478);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(264, 16);
-            this.label19.TabIndex = 36;
-            this.label19.Text = "Generator Kart Postaci © LanternCode 2020";
+            this.btnPicture.Location = new System.Drawing.Point(176, 428);
+            this.btnPicture.Name = "btnPicture";
+            this.btnPicture.Size = new System.Drawing.Size(75, 41);
+            this.btnPicture.TabIndex = 37;
+            this.btnPicture.Text = "Dodaj Zdjęcie";
+            this.btnPicture.UseVisualStyleBackColor = true;
+            this.btnPicture.Click += new System.EventHandler(this.btnPicture_Click);
             // 
             // frmStatistics
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 503);
-            this.Controls.Add(this.label19);
+            this.Controls.Add(this.btnPicture);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.btnContinue);
@@ -408,7 +408,7 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtLevel);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.imgCharacter);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtRank);
             this.Controls.Add(this.label4);
@@ -420,7 +420,7 @@
             this.Controls.Add(this.label1);
             this.Name = "frmStatistics";
             this.Text = "Na początek wprowadź podstawowe cechy swojej postaci!";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgCharacter)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -437,7 +437,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtRank;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox imgCharacter;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtLevel;
         private System.Windows.Forms.Label label7;
@@ -464,7 +464,7 @@
         private System.Windows.Forms.Button btnContinue;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Button btnPicture;
     }
 }
 

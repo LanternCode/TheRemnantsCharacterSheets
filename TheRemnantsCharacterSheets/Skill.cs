@@ -8,6 +8,8 @@ namespace TheRemnantsCharacterSheets
 {
     public class Skill
     {
+        //A single skill to be used in the game
+
         public string Name { get; internal set; }
         public string Description { get; internal set; }
         public int Priority { get; internal set; }

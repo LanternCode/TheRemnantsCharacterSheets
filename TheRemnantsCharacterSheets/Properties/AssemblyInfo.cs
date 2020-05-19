@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("TheRemnantsCharacterSheets")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("This app allows the user to generate a character sheet for The Remnants RPG!")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("LanternCode")]
 [assembly: AssemblyProduct("TheRemnantsCharacterSheets")]
-[assembly: AssemblyCopyright("Copyright ©  2020")]
+[assembly: AssemblyCopyright("All Rights Reserved © LanternCode 2020")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
+using System.Drawing.Imaging;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,6 +18,7 @@ namespace TheRemnantsCharacterSheets
         public frmStatistics()
         {
             InitializeComponent();
+            this.btnPicture.Click += new System.EventHandler(this.btnPicture_Click);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -50,5 +54,71 @@ namespace TheRemnantsCharacterSheets
         {
             Environment.Exit(0);
         }
+
+        private void btnPicture_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog opFile = new OpenFileDialog();
+            opFile.Title = "Wybierz zdjęcie dla swojej postaci!";
+            opFile.Filter = "jpg files (*.jpg)|*.jpg|All files (*.*)|*.*";
+
+            string appPath = Path.GetDirectoryName(Application.ExecutablePath);// + @"\ProImages\"; // <---
+            if (Directory.Exists(appPath) == false)                                              // <---
+            {                                                                                    // <---
+                Directory.CreateDirectory(appPath);                                              // <---
+            }                                                                                    // <---
+
+            if (opFile.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    string iName = opFile.SafeFileName;   // <---
+                    string filepath = opFile.FileName;    // <---
+                    Bitmap toResize = new Bitmap(opFile.OpenFile());
+                    imgCharacter.Image = ResizeImage(toResize, 162, 293);
+                    File.Copy(filepath, appPath + iName); // <---
+                }
+                catch (Exception exp)
+                {
+                    MessageBox.Show("Musisz wybrać zdjęcie, kod błędu: " + exp.Message);
+                }
+            }
+            else
+            {
+                opFile.Dispose();
+            }
+        }
+
+        /// <summary>
+        /// Resize the image to the specified width and height.
+        /// </summary>
+        /// <param name="image">The image to resize.</param>
+        /// <param name="width">The width to resize to.</param>
+        /// <param name="height">The height to resize to.</param>
+        /// <returns>The resized image.</returns>
+        public static Bitmap ResizeImage(Image image, int width, int height)
+        {
+            var destRect = new Rectangle(0, 0, width, height);
+            var destImage = new Bitmap(width, height);
+
+            destImage.SetResolution(image.HorizontalResolution, image.VerticalResolution);
+
+            using (var graphics = Graphics.FromImage(destImage))
+            {
+                graphics.CompositingMode = CompositingMode.SourceCopy;
+                graphics.CompositingQuality = CompositingQuality.HighQuality;
+                graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
+                graphics.SmoothingMode = SmoothingMode.HighQuality;
+                graphics.PixelOffsetMode = PixelOffsetMode.HighQuality;
+
+                using (var wrapMode = new ImageAttributes())
+                {
+                    wrapMode.SetWrapMode(WrapMode.TileFlipXY);
+                    graphics.DrawImage(image, destRect, 0, 0, image.Width, image.Height, GraphicsUnit.Pixel, wrapMode);
+                }
+            }
+
+            return destImage;
+        }
+
     }
 }

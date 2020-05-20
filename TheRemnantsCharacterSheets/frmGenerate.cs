@@ -29,7 +29,7 @@ namespace TheRemnantsCharacterSheets
         {
 
             //Path to save the sheet
-            string fileName = @"D:\GeneratedDocs\" + Character.Name + ".docx"; 
+            string fileName = @"D:\GeneratedDocs\" + Character.Name.Replace(' ', '_') + ".docx"; 
 
             //Create Title  
             string title = Character.Name;
@@ -215,6 +215,7 @@ namespace TheRemnantsCharacterSheets
 
             //Create Table with 3 columns and enough rows to hold all skills, equipment and items 
             Int32 rowsRequired = Character.Equipment.Count > Character.Skills.Count ? (Character.Equipment.Count > Character.ItemCount ? Character.Equipment.Count : Character.ItemCount) : (Character.Skills.Count > Character.ItemCount ? Character.Skills.Count : Character.ItemCount);
+            rowsRequired = rowsRequired < 2 ? 2 : rowsRequired;
             Table tableBottom = doc.AddTable(rowsRequired + 1, 3); //first row is a header row
             tableBottom.Alignment = Alignment.center;
             Border tableBottomBorder = new Border(Xceed.Document.NET.BorderStyle.Tcbs_none, 0, 0, Color.Black);

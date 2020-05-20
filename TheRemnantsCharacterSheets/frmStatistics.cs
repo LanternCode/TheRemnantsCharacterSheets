@@ -18,7 +18,6 @@ namespace TheRemnantsCharacterSheets
         public frmStatistics()
         {
             InitializeComponent();
-            this.btnPicture.Click += new System.EventHandler(this.btnPicture_Click);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -74,7 +73,7 @@ namespace TheRemnantsCharacterSheets
                     string iName = opFile.SafeFileName;   // <---
                     string filepath = opFile.FileName;    // <---
                     Bitmap toResize = new Bitmap(opFile.OpenFile());
-                    imgCharacter.Image = ResizeImage(toResize, 162, 293);
+                    imgCharacter.Image = ResizeImage(toResize, 150, 230);
                     File.Copy(filepath, appPath + iName); // <---
                 }
                 catch (Exception exp)

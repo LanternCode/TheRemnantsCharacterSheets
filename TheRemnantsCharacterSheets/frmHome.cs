@@ -28,5 +28,10 @@ namespace TheRemnantsCharacterSheets
         {
             this.Close();
         }
+
+        private void btnCredits_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

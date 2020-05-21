@@ -32,6 +32,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnCredits = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -76,11 +77,24 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Generator Kart Postaci © LanternCode 2020";
             // 
+            // btnCredits
+            // 
+            this.btnCredits.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCredits.Location = new System.Drawing.Point(701, 402);
+            this.btnCredits.Name = "btnCredits";
+            this.btnCredits.Size = new System.Drawing.Size(87, 36);
+            this.btnCredits.TabIndex = 4;
+            this.btnCredits.Text = "O autorze";
+            this.btnCredits.UseVisualStyleBackColor = true;
+            this.btnCredits.Visible = false;
+            this.btnCredits.Click += new System.EventHandler(this.btnCredits_Click);
+            // 
             // frmHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnCredits);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -98,5 +112,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnCredits;
     }
 }

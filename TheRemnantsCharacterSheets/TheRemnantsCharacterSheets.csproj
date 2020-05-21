@@ -174,7 +174,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="mitchjones.jpg" />
     <Content Include="mkrr.jpg" />
   </ItemGroup>
   <ItemGroup>

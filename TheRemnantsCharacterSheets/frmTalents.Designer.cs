@@ -67,7 +67,6 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.lblTacticAnalysis = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // chkTactics
@@ -425,22 +424,11 @@
             this.lblTacticAnalysis.TabIndex = 52;
             this.lblTacticAnalysis.Text = "Analiza Taktyczna";
             // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(269, 422);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(264, 16);
-            this.label14.TabIndex = 53;
-            this.label14.Text = "Generator Kart Postaci © LanternCode 2020";
-            // 
             // frmTalents
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label14);
             this.Controls.Add(this.lblTacticAnalysis);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label12);
@@ -527,6 +515,5 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label lblTacticAnalysis;
-        private System.Windows.Forms.Label label14;
     }
 }

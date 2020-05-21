@@ -64,7 +64,7 @@ namespace TheRemnantsCharacterSheets
         {
 
             //Path to save the sheet
-            string fileName = @"D:\GeneratedDocs\" + Character.Name.Replace(' ', '_') + ".docx"; 
+            string fileName = @"D:\TheRemnantsCharacterSheets\" + Character.Name.Replace(' ', '_') + ".docx"; 
 
             //Create Title  
             string title = Character.Name;

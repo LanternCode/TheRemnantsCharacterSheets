@@ -64,7 +64,7 @@ namespace TheRemnantsCharacterSheets
         {
 
             //Path to save the sheet
-            string fileName = @"D:\TheRemnantsCharacterSheets\" + Character.Name.Replace(' ', '_') + ".docx"; 
+            string fileName = @"TheRemnantsCharacterSheets\" + Character.Name.Replace(' ', '_') + ".docx"; 
 
             //Create Title  
             string title = Character.Name;
@@ -112,7 +112,7 @@ namespace TheRemnantsCharacterSheets
             Picture p = img.CreatePicture(230, 150);
             t.MergeCellsInColumn(0, 0, 10);
             t.Rows[0].Cells[0].Paragraphs.First().AppendPicture(p);
-            File.Delete(Character.imageName);
+            if(Character.imageName != "../../mkrr.jpg") File.Delete(Character.imageName);
 
             //Add statistics:
             t.Rows[0].Cells[1].Paragraphs.First().Append("Poziom: " + Character.Level).SpacingAfter(7d);
@@ -247,11 +247,13 @@ namespace TheRemnantsCharacterSheets
             //Insert the table
             doc.InsertTable(t);
 
+            //Insert an empty line
             doc.InsertParagraph(Environment.NewLine);
 
             //Create Table with 3 columns and enough rows to hold all skills, equipment and items 
             Int32 rowsRequired = Character.Equipment.Count > Character.Skills.Count ? (Character.Equipment.Count > Character.ItemCount ? Character.Equipment.Count : Character.ItemCount) : (Character.Skills.Count > Character.ItemCount ? Character.Skills.Count : Character.ItemCount);
             rowsRequired = rowsRequired < 2 ? 2 : rowsRequired;
+
             Table tableBottom = doc.AddTable(rowsRequired + 1, 3); //first row is a header row
             tableBottom.Alignment = Alignment.center;
             Border tableBottomBorder = new Border(Xceed.Document.NET.BorderStyle.Tcbs_none, 0, 0, Color.Black);
@@ -288,7 +290,7 @@ namespace TheRemnantsCharacterSheets
             //List all skills
             foreach (Skill skill in Character.Skills)
             {
-                String line = "- " + skill.Name + (skill.Description.Length > 0 ? " - " : "") + skill.Description + " (" + skill.Priority + ")" + Environment.NewLine;
+                String line = "- " + Skill.listSkill(skill);
                 tableBottom.Rows[1].Cells[0].Paragraphs.First().Append(line);
                 Index++;
             }
@@ -335,6 +337,12 @@ namespace TheRemnantsCharacterSheets
 
             //Insert the table
             doc.InsertTable(tableBottom);
+
+            //Create directory for the document if it does not exist
+            if (Directory.Exists(@"TheRemnantsCharacterSheets\") == false)
+            {
+                Directory.CreateDirectory(@"TheRemnantsCharacterSheets\");
+            }
 
             //Save the document to its final form
             doc.Save();

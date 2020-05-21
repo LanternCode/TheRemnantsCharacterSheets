@@ -15,7 +15,7 @@ namespace TheRemnantsCharacterSheets
         public frmAddSkill()
         {
             InitializeComponent();
-            UpdateSkillList();
+            UpdateSkillList(); //Sets the label on first entry or return
         }
 
         public void UpdateSkillList()
@@ -26,19 +26,7 @@ namespace TheRemnantsCharacterSheets
                 lblSkillsAdded.Text = "";
                 foreach (Skill skill in Character.Skills)
                 {
-                    //Is the skill passive?
-                    if (skill.Passive)
-                        lblSkillsAdded.Text += "(Pasywna) ";
-
-                    //Add name and description
-                    lblSkillsAdded.Text += skill.Name + " - " + skill.Description;
-
-                    //Only regular, non-passive skills have priority assigned
-                    if (!skill.Passive)
-                        lblSkillsAdded.Text += " (" + skill.Priority + ")";
-
-                    //Add a dot that ends the sentence and put a new line before listing another skill
-                    lblSkillsAdded.Text += '.' + Environment.NewLine;
+                    lblSkillsAdded.Text += Skill.listSkill(skill);
                 }
             }
         }

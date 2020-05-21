@@ -26,8 +26,19 @@ namespace TheRemnantsCharacterSheets
                 lblSkillsAdded.Text = "";
                 foreach (Skill skill in Character.Skills)
                 {
-                    lblSkillsAdded.Text += skill.Name + " - " + skill.Description + " (" + skill.Priority + ")";
-                    lblSkillsAdded.Text += Environment.NewLine;
+                    //Is the skill passive?
+                    if (skill.Passive)
+                        lblSkillsAdded.Text += "(Pasywna) ";
+
+                    //Add name and description
+                    lblSkillsAdded.Text += skill.Name + " - " + skill.Description;
+
+                    //Only regular, non-passive skills have priority assigned
+                    if (!skill.Passive)
+                        lblSkillsAdded.Text += " (" + skill.Priority + ")";
+
+                    //Add a dot that ends the sentence and put a new line before listing another skill
+                    lblSkillsAdded.Text += '.' + Environment.NewLine;
                 }
             }
         }
@@ -35,11 +46,10 @@ namespace TheRemnantsCharacterSheets
         private void btnAdd_Click(object sender, EventArgs e)
         {
             Skill aSkill = new Skill();
-            int value;
 
             aSkill.Name = txtName.Text;
             aSkill.Description = txtDescription.Text;
-            aSkill.Priority = int.TryParse(txtPriority.Text, out value) ? Convert.ToInt32(txtPriority.Text) : 5;
+            aSkill.Priority = int.TryParse(txtPriority.Text, out _) ? Convert.ToInt32(txtPriority.Text) : 5;
             aSkill.Passive = chkPassive.Checked;
 
             Character.Skills.Add(aSkill);
@@ -48,6 +58,7 @@ namespace TheRemnantsCharacterSheets
             txtDescription.Clear();
             txtPriority.Clear();
             chkPassive.Checked = false;
+            txtPriority.Enabled = true;
 
             UpdateSkillList();
         }
@@ -68,6 +79,12 @@ namespace TheRemnantsCharacterSheets
         private void btnClose_Click(object sender, EventArgs e)
         {
             Environment.Exit(0);
+        }
+
+        private void chkPassive_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkPassive.Checked) txtPriority.Enabled = false;
+            else txtPriority.Enabled = true;
         }
     }
 }

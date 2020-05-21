@@ -154,6 +154,7 @@
             this.chkPassive.TabIndex = 11;
             this.chkPassive.Text = "Umiejętność pasywna";
             this.chkPassive.UseVisualStyleBackColor = true;
+            this.chkPassive.CheckedChanged += new System.EventHandler(this.chkPassive_CheckedChanged);
             // 
             // label5
             // 

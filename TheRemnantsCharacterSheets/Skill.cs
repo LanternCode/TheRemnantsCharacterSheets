@@ -24,7 +24,7 @@ namespace TheRemnantsCharacterSheets
                 line += "(Pasywna) ";
 
             //Add name
-            line += skill.Name;
+            line += skill.Name.Length > 0 ? skill.Name : "Umiejętność";
 
             //Add description
             if (skill.Description.Length > 0)

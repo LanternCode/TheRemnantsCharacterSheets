@@ -70,15 +70,19 @@ namespace TheRemnantsCharacterSheets
             {
                 try
                 {
-                    string iName = opFile.SafeFileName;   // <---
-                    string filepath = opFile.FileName;    // <---
+                    Character.imageName = opFile.SafeFileName;
                     Bitmap toResize = new Bitmap(opFile.OpenFile());
-                    imgCharacter.Image = ResizeImage(toResize, 150, 230);
-                    File.Copy(filepath, appPath + iName); // <---
+
+                    Image characterImage = ResizeImage(toResize, 200, 306);
+
+                    imgCharacter.Image = characterImage;
+                    characterImage.Save(Character.imageName);
+                    opFile.Dispose();
                 }
                 catch (Exception exp)
                 {
                     MessageBox.Show("Musisz wybrać zdjęcie, kod błędu: " + exp.Message);
+                    opFile.Dispose();
                 }
             }
             else

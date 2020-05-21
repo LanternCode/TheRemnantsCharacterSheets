@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,11 +9,14 @@ namespace TheRemnantsCharacterSheets
 {
     public static class Character
     {
+        
         //About the character
         public static string Name { get; internal set; }
         public static string Title { get; internal set; }
         public static string Group { get; internal set; }
         public static string Rank { get; internal set; }
+
+        internal static string imageName;
 
         //The character's stats
         public static int Level { get; internal set; }

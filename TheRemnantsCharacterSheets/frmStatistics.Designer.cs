@@ -135,7 +135,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(56, 133);
+            this.label5.Location = new System.Drawing.Point(151, 138);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(83, 13);
             this.label5.TabIndex = 8;
@@ -143,11 +143,13 @@
             // 
             // imgCharacter
             // 
-            this.imgCharacter.Location = new System.Drawing.Point(134, 163);
+            this.imgCharacter.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.imgCharacter.Location = new System.Drawing.Point(89, 163);
             this.imgCharacter.Name = "imgCharacter";
-            this.imgCharacter.Size = new System.Drawing.Size(150, 230);
+            this.imgCharacter.Size = new System.Drawing.Size(200, 306);
             this.imgCharacter.TabIndex = 9;
             this.imgCharacter.TabStop = false;
+            this.imgCharacter.Click += new System.EventHandler(this.btnPicture_Click);
             // 
             // label6
             // 
@@ -336,7 +338,7 @@
             // btnContinue
             // 
             this.btnContinue.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnContinue.Location = new System.Drawing.Point(701, 451);
+            this.btnContinue.Location = new System.Drawing.Point(701, 426);
             this.btnContinue.Name = "btnContinue";
             this.btnContinue.Size = new System.Drawing.Size(87, 43);
             this.btnContinue.TabIndex = 33;
@@ -357,10 +359,10 @@
             // 
             // button1
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(12, 448);
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(12, 425);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(89, 43);
+            this.button1.Size = new System.Drawing.Size(71, 43);
             this.button1.TabIndex = 35;
             this.button1.Text = "Zamknij generator";
             this.button1.UseVisualStyleBackColor = true;
@@ -368,7 +370,7 @@
             // 
             // btnPicture
             // 
-            this.btnPicture.Location = new System.Drawing.Point(172, 399);
+            this.btnPicture.Location = new System.Drawing.Point(8, 162);
             this.btnPicture.Name = "btnPicture";
             this.btnPicture.Size = new System.Drawing.Size(75, 41);
             this.btnPicture.TabIndex = 37;
@@ -380,7 +382,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 503);
+            this.ClientSize = new System.Drawing.Size(800, 480);
             this.Controls.Add(this.btnPicture);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label18);

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TheRemnantsCharacterSheets.Classes;
 
 namespace TheRemnantsCharacterSheets
 {
@@ -32,6 +33,27 @@ namespace TheRemnantsCharacterSheets
         private void btnCredits_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            clsUserSettings.languageChoice = 0;
+            btnEnglish.Font = new Font(btnEnglish.Font, FontStyle.Bold);
+            btnPolish.Font = new Font(btnPolish.Font, FontStyle.Regular);
+        }
+
+        private void btnPolish_Click(object sender, EventArgs e)
+        {
+            clsUserSettings.languageChoice = 0;
+            btnEnglish.Font = new Font(btnEnglish.Font, FontStyle.Regular);
+            btnPolish.Font = new Font(btnPolish.Font, FontStyle.Bold);
+        }
+
+        private void frmHome_Load(object sender, EventArgs e)
+        {
+            btnBegin.Text = "Begin creating";
+            btnExit.Text = "Exit the generator";
+            btnCredits.Text = "Credits";
         }
     }
 }

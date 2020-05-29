@@ -75,7 +75,8 @@ namespace TheRemnantsCharacterSheets
                     Image characterImage = ResizeImage(toResize, 200, 306);
 
                     imgCharacter.Image = characterImage;
-                    characterImage.Save("Images/" + Character.imageName);
+                    string path = Path.Combine("Images", Character.imageName);
+                    characterImage.Save(path);
                 }
                 catch
                 {

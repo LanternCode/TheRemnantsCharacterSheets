@@ -78,12 +78,13 @@ namespace TheRemnantsCharacterSheets
             t.SetWidths(new float[] { 180f, 135, 135f });
 
             //Add image:
-            Xceed.Document.NET.Image img = doc.AddImage(Character.imageName);
+            string path = Path.Combine("Images", Character.imageName);
+            Xceed.Document.NET.Image img = doc.AddImage(path);
             Picture p = img.CreatePicture(230, 150);
             t.MergeCellsInColumn(0, 0, 10);
             t.Rows[0].Cells[0].Paragraphs.First().AppendPicture(p);
             if(Character.imageName != "Images/mkrr.jpg") //default picture path
-                File.Delete("Images/" + Character.imageName);
+                File.Delete(path);
 
             //Add statistics:
             t.Rows[0].Cells[1].Paragraphs.First().Append("Poziom: " + Character.Level).SpacingAfter(7d);

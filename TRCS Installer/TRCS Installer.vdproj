@@ -373,7 +373,7 @@
         "Product"
         {
         "Name" = "8:Microsoft Visual Studio"
-        "ProductName" = "8:TRCS Installer"
+        "ProductName" = "8:TRCS Generator"
         "ProductCode" = "8:{866CF51F-43B8-4B9E-98D6-AA13FCCC6CA6}"
         "PackageCode" = "8:{056EAA83-3382-49A1-833A-FE7852CA4CFF}"
         "UpgradeCode" = "8:{7B736615-C753-4597-8E01-8C8DE538F576}"

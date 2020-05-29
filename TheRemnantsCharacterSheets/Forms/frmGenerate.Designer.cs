@@ -72,12 +72,12 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(209, 250);
+            this.label3.Location = new System.Drawing.Point(183, 249);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(399, 60);
+            this.label3.Size = new System.Drawing.Size(422, 60);
             this.label3.TabIndex = 3;
-            this.label3.Text = "Dokument ten zostanie zapisany na Twoim komputerze\r\nna dysku D w folderze TheRemn" +
-    "antsCharacterSheets\r\ni będzie mieć taką samą nazwę jak Twoja postać.";
+            this.label3.Text = "Dokument ten zostanie zapisany na Twoim komputerze w\r\nfolderze Character Sheets i" +
+    " będzie mieć taką samą nazwę \r\njak Twoja postać.";
             // 
             // button1
             // 

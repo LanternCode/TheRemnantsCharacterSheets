@@ -32,7 +32,9 @@ namespace TheRemnantsCharacterSheets
         {
 
             //Path to save the sheet
-            string fileName = @"TheRemnantsCharacterSheets\" + Character.Name.Replace(' ', '_') + ".docx"; 
+            string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            string fileName = Character.Name.Replace(' ', '_') + ".docx";
+            string savePath = Path.Combine(desktopPath, fileName);
 
             //Create Title  
             string title = Character.Name;
@@ -53,7 +55,7 @@ namespace TheRemnantsCharacterSheets
             textParagraphFormat.FontColor = ColorTranslator.FromHtml("#5A5A5A");
 
             //Create word document
-            var doc = DocX.Create(fileName);
+            var doc = DocX.Create(savePath);
 
             //Insert title
             Paragraph paragraphTitle = doc.InsertParagraph(title, false, titleFormat);
@@ -80,7 +82,8 @@ namespace TheRemnantsCharacterSheets
             Picture p = img.CreatePicture(230, 150);
             t.MergeCellsInColumn(0, 0, 10);
             t.Rows[0].Cells[0].Paragraphs.First().AppendPicture(p);
-            if(Character.imageName != "../../mkrr.jpg") File.Delete(Character.imageName);
+            if(Character.imageName != "Images/mkrr.jpg") //default picture path
+                File.Delete("Images/" + Character.imageName);
 
             //Add statistics:
             t.Rows[0].Cells[1].Paragraphs.First().Append("Poziom: " + Character.Level).SpacingAfter(7d);
@@ -306,17 +309,11 @@ namespace TheRemnantsCharacterSheets
             //Insert the table
             doc.InsertTable(tableBottom);
 
-            //Create directory for the document if it does not exist
-            if (Directory.Exists(@"TheRemnantsCharacterSheets\") == false)
-            {
-                Directory.CreateDirectory(@"TheRemnantsCharacterSheets\");
-            }
-
             //Save the document to its final form
             doc.Save();
 
             //Generate and open the document
-            Process.Start("WINWORD.EXE", fileName);
+            Process.Start("WINWORD.EXE", savePath);
         }
     }
 }

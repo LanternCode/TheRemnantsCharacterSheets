@@ -75,13 +75,14 @@ namespace TheRemnantsCharacterSheets
                     Image characterImage = ResizeImage(toResize, 200, 306);
 
                     imgCharacter.Image = characterImage;
-                    characterImage.Save(Character.imageName);
-                    opFile.Dispose();
+                    characterImage.Save("Images/" + Character.imageName);
                 }
-                catch (Exception exp)
+                catch
                 {
-                    MessageBox.Show("Musisz wybrać zdjęcie, kod błędu: " + exp.Message);
-                    opFile.Dispose();
+                    MessageBox.Show("Musisz wybrać zdjęcie. Jeśli tak zrobiono a ten błąd dalej występuje, jest " +
+                        "spora szansa że to zdjęcie zostało zapisane w złym formacie lub nie jest tym czym się " +
+                        "wydaje. Pobierz je z innego źródła lub 'zapisz jako' w dowolnym programie graficznym " +
+                        "typu Paint.", "Wystąpił Błąd");
                 }
             }
             else

@@ -16,7 +16,7 @@ namespace TheRemnantsCharacterSheets
         public static string Group { get; internal set; }
         public static string Rank { get; internal set; }
 
-        internal static string imageName = "../../../mkrr.jpg";
+        internal static string imageName = "Images/mkrr.jpg";
 
         //The character's stats
         public static int Level { get; internal set; }

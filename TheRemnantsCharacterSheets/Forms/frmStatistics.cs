@@ -31,7 +31,7 @@ namespace TheRemnantsCharacterSheets
 
             //stats
             Character.Level = txtLevel.Text.Length > 0 ? (int.TryParse(txtLevel.Text, out _) ? Convert.ToInt32(txtLevel.Text) : 0) : 1;
-            Character.Class = txtClass.Text.Length > 0 ? txtClass.Text : "Livestreamer";
+            Character.Class = lstClass.Text.Length > 0 ? lstClass.Text : "Livestreamer";
             Character.HP = txtHP.Text.Length > 0 ? (int.TryParse(txtHP.Text, out _) ? Convert.ToInt32(txtHP.Text) : 0) : 100;
             Character.Agility = txtAgi.Text.Length > 0 ? (int.TryParse(txtAgi.Text, out _) ? Convert.ToInt32(txtAgi.Text) : 0) : 90;
             Character.Speed = txtSpd.Text.Length > 0 ? (int.TryParse(txtSpd.Text, out _) ? Convert.ToInt32(txtSpd.Text) : 0) : 85;

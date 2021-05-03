@@ -97,7 +97,6 @@ namespace TheRemnantsCharacterSheets
             t.Rows[7].Cells[1].Paragraphs.First().Append("Unik: " + Character.Dodge).SpacingAfter(7d);
             t.Rows[8].Cells[1].Paragraphs.First().Append("Siła: " + Character.Strength).SpacingAfter(7d);
             t.Rows[9].Cells[1].Paragraphs.First().Append("Atak Bazowy: " + Character.BaseAttack).SpacingAfter(7d);
-            t.Rows[10].Cells[1].Paragraphs.First().Append("Rezystancja: " + Character.Resistance).SpacingAfter(7d);
 
             //Add talents:
             Int32 Index = 0;

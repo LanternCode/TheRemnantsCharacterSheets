@@ -29,7 +29,6 @@ namespace TheRemnantsCharacterSheets
         public static int Dodge { get; internal set; }
         public static int Strength { get; internal set; }
         public static int BaseAttack { get; internal set; }
-        public static int Resistance { get; internal set; }
 
         //The character's talents
         public static int TacticAnalysis { get; internal set; }

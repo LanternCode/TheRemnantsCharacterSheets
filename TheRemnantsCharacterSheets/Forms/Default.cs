@@ -35,25 +35,31 @@ namespace TheRemnantsCharacterSheets
 
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void btnEnglish_Click(object sender, EventArgs e)
         {
-            clsUserSettings.languageChoice = 0;
+            clsUserSettings.languageChoice = clsUserSettings.LanguageChoice.English;
             btnEnglish.Font = new Font(btnEnglish.Font, FontStyle.Bold);
             btnPolish.Font = new Font(btnPolish.Font, FontStyle.Regular);
         }
 
         private void btnPolish_Click(object sender, EventArgs e)
         {
-            clsUserSettings.languageChoice = 0;
+            clsUserSettings.languageChoice = clsUserSettings.LanguageChoice.Polish;
             btnEnglish.Font = new Font(btnEnglish.Font, FontStyle.Regular);
             btnPolish.Font = new Font(btnPolish.Font, FontStyle.Bold);
         }
 
         private void frmHome_Load(object sender, EventArgs e)
         {
-            btnBegin.Text = "Begin creating";
-            btnExit.Text = "Exit the generator";
-            btnCredits.Text = "Credits";
+            if(clsUserSettings.languageChoice == clsUserSettings.LanguageChoice.English)
+            {
+                btnBegin.Text = "Begin creating";
+                btnExit.Text = "Exit the generator";
+                btnCredits.Text = "Credits";
+                lblHeaderOne.Text = "Welcome!";
+                lblLangChoice.Text = "Choose your language";
+                lblCopyrights.Text = "The Remnants Character Sheet Generator © LanternCode 2020";
+            }
         }
     }
 }

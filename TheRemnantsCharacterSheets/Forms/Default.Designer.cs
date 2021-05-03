@@ -28,25 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblHeaderOne = new System.Windows.Forms.Label();
             this.btnBegin = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblCopyrights = new System.Windows.Forms.Label();
             this.btnCredits = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblLangChoice = new System.Windows.Forms.Label();
             this.btnPolish = new System.Windows.Forms.Button();
             this.btnEnglish = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // label1
+            // lblHeaderOne
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(237, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(284, 37);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Witaj! / Welcome!";
+            this.lblHeaderOne.AutoSize = true;
+            this.lblHeaderOne.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHeaderOne.Location = new System.Drawing.Point(332, 32);
+            this.lblHeaderOne.Name = "lblHeaderOne";
+            this.lblHeaderOne.Size = new System.Drawing.Size(104, 37);
+            this.lblHeaderOne.TabIndex = 0;
+            this.lblHeaderOne.Text = "Witaj!";
             // 
             // btnBegin
             // 
@@ -70,15 +70,15 @@
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.button2_Click);
             // 
-            // label2
+            // lblCopyrights
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(257, 402);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(264, 16);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Generator Kart Postaci © LanternCode 2020";
+            this.lblCopyrights.AutoSize = true;
+            this.lblCopyrights.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCopyrights.Location = new System.Drawing.Point(257, 402);
+            this.lblCopyrights.Name = "lblCopyrights";
+            this.lblCopyrights.Size = new System.Drawing.Size(264, 16);
+            this.lblCopyrights.TabIndex = 3;
+            this.lblCopyrights.Text = "Generator Kart Postaci © LanternCode 2020";
             // 
             // btnCredits
             // 
@@ -92,15 +92,15 @@
             this.btnCredits.Visible = false;
             this.btnCredits.Click += new System.EventHandler(this.btnCredits_Click);
             // 
-            // label3
+            // lblLangChoice
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(275, 96);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(237, 16);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Wybierz język / Choose your language";
+            this.lblLangChoice.AutoSize = true;
+            this.lblLangChoice.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLangChoice.Location = new System.Drawing.Point(307, 96);
+            this.lblLangChoice.Name = "lblLangChoice";
+            this.lblLangChoice.Size = new System.Drawing.Size(91, 16);
+            this.lblLangChoice.TabIndex = 5;
+            this.lblLangChoice.Text = "Wybierz język";
             // 
             // btnPolish
             // 
@@ -122,7 +122,7 @@
             this.btnEnglish.TabIndex = 7;
             this.btnEnglish.Text = "English";
             this.btnEnglish.UseVisualStyleBackColor = true;
-            this.btnEnglish.Click += new System.EventHandler(this.button4_Click);
+            this.btnEnglish.Click += new System.EventHandler(this.btnEnglish_Click);
             // 
             // frmHome
             // 
@@ -131,12 +131,12 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnEnglish);
             this.Controls.Add(this.btnPolish);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lblLangChoice);
             this.Controls.Add(this.btnCredits);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblCopyrights);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnBegin);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblHeaderOne);
             this.Name = "frmHome";
             this.Text = "Generator Kart Postaci The Remnants";
             this.Load += new System.EventHandler(this.frmHome_Load);
@@ -147,12 +147,12 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblHeaderOne;
         private System.Windows.Forms.Button btnBegin;
         private System.Windows.Forms.Button btnExit;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblCopyrights;
         private System.Windows.Forms.Button btnCredits;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblLangChoice;
         private System.Windows.Forms.Button btnPolish;
         private System.Windows.Forms.Button btnEnglish;
     }

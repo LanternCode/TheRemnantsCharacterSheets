@@ -102,11 +102,11 @@
     <Compile Include="Forms\frmGenerate.Designer.cs">
       <DependentUpon>frmGenerate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmHome.cs">
+    <Compile Include="Forms\Default.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmHome.Designer.cs">
-      <DependentUpon>frmHome.cs</DependentUpon>
+    <Compile Include="Forms\Default.Designer.cs">
+      <DependentUpon>Default.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\frmItems.cs">
       <SubType>Form</SubType>
@@ -119,6 +119,12 @@
     </Compile>
     <Compile Include="Forms\frmStatistics.Designer.cs">
       <DependentUpon>frmStatistics.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmStart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmStart.Designer.cs">
+      <DependentUpon>frmStart.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\frmTalents.cs">
       <SubType>Form</SubType>
@@ -138,14 +144,17 @@
     <EmbeddedResource Include="Forms\frmGenerate.resx">
       <DependentUpon>frmGenerate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmHome.resx">
-      <DependentUpon>frmHome.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Default.resx">
+      <DependentUpon>Default.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmItems.resx">
       <DependentUpon>frmItems.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmStatistics.resx">
       <DependentUpon>frmStatistics.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmStart.resx">
+      <DependentUpon>frmStart.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmTalents.resx">
       <DependentUpon>frmTalents.cs</DependentUpon>

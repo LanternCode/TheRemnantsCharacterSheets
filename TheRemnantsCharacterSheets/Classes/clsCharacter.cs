@@ -18,6 +18,59 @@ namespace TheRemnantsCharacterSheets
 
         internal static string imageName = "Images/mkrr.jpg";
 
+        internal static int DetermineStartingHp()
+        {
+            switch(Class)
+            {
+                case "Wojownik":
+                    {
+                        return 20;
+                    }
+                case "Tancerz":
+                    {
+                        return 13;
+                    }
+                case "Naukowiec":
+                    {
+                        return 11;
+                    }
+                case "Woj. Elementalista":
+                    {
+                        return 50;
+                    }
+                case "Zabójca":
+                    {
+                        return 35;
+                    }
+                case "Mag Domeny Zasadniczej":
+                    {
+                        return 30;
+                    }
+                case "Paladyn":
+                    {
+                        return 50;
+                    }
+                case "Rytualista":
+                    {
+                        return 35;
+                    }
+                case "Mag Domeny Rozszerzonej":
+                    {
+                        return 35;
+                    }
+                case "Asterysk":
+                    {
+                        return 20;
+                    }
+                case "Cecha":
+                    {
+                        return 20;
+                    }
+                default:
+                    return 0;
+            }
+        }
+
         //The character's stats
         public static int Level { get; internal set; }
         public static string Class { get; internal set; }

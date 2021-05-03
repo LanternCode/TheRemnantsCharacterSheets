@@ -8,6 +8,19 @@ namespace TheRemnantsCharacterSheets.Classes
 {
     public static class clsUserSettings
     {
-        public static int languageChoice { get; internal set; } = 0;
+        private static LanguageChoice mLanguageChoice;
+        public enum LanguageChoice { English, Polish };
+
+        public static LanguageChoice languageChoice
+        {
+            get
+            {
+                return mLanguageChoice;
+            }
+            set
+            {
+                mLanguageChoice = value;
+            }
+        }
     }
 }
